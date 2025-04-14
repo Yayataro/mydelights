@@ -158,6 +158,98 @@ img{
     }
 }
 
+.tabla-compras {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+.tabla-compras th {
+    background-color: #4a3015;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+.tabla-compras td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.cantidad-select {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 80px;
+}
+
+.total-general {
+    background-color: #f8f8f8;
+    font-weight: bold;
+}
+
+.valor-total {
+    color: #2ecc71;
+    font-weight: bold;
+}
+/*informacion */
+.presentacion{
+    width: 90%;
+    margin-inline: auto;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+@media (min-width: 768px) {
+    .presentacion{
+        flex-direction: row;
+        margin-top: 40px
+    }
+}
+/*informacion */
+.informacion{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+@media (min-width: 768px) {
+    .informacion {
+        text-align: start;
+        align-items: start;
+    }
+} 
+/* Estilos base del botón */
+.informacion--boton a.boton-estilo {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #ff6b6b; /* Color original del botón */
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    transition: all 0.3s ease; /* Transición suave para el hover */
+}
+
+/* Estilos al pasar el cursor (hover) */
+.informacion--boton a.boton-estilo:hover {
+    background-color: white;
+    color: #4a3015;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Opcional: efecto de sombra */
+}
+
+/* Estilos para móviles */
+@media (max-width: 768px) {
+    .informacion--boton a.boton-estilo {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+}
+
 
 .informacion--boton button{
     padding: 10px;
@@ -189,156 +281,6 @@ img{
 .informacion--boton button:hover {
     background-color: white;
     color: #4a3015;
-    cursor: pointer;
-}
-
-/*informacion imagen*/
-.presentacion--imagen {
-    max-width: 300px;
-    filter: drop-shadow(0 1mm 3mm rgba(90, 67, 3, 0.675));
-}
-@media (min-width:1024px) {
-    .presentacion--imagen{
-        max-width: 800px;
-    }
-} 
-.menu2{
-    width: 90%;
-    margin-inline:auto;    
-} 
-.platos{
-    display: grid;
-    grid-template-columns: 1fr;
-    row-gap: 85px;
-}
-@media (min-width:768px){
-    .platos{
-        grid-template-columns: 1fr 1fr;
-    }
-}
-@media (min-width:992px){
-    .platos{
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-}
-
-/*comida--titulo*/
-
-.comida--titulo{
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 85px;
-}
-@media (min-width:768px) {
-    .comida--titulo{
-        text-align: start;
-    }
-}
-/*contenedor de tarjetas*/
-.plato{
-    width: 80%;
-    margin-inline:auto;
-    background-color: white;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    text-align: center;
-    border-radius: 10px;
-    border: 1px solid rgba(90, 67, 3, 0.675)
-}
-.plato img{
-    width: 400px;
-    filter: drop-shadow(0 0 0.9rem #4a3015 );
-    margin-top: -50px;
-}
-.plato p{
-    font-size: 15px;
-    color:#4a3015;
-}
-.plato--precio{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    justify-content: space-between;
-}
-.plato--precio p{
-    font-weight: 900;
-}
-.plato--precio button{
-    background-color: #4a3015;
-    color: white;
-    font-weight: 900;
-    padding: 5px 12px;
-    border-radius: 50%;
-    font-size: 25px;
-}
-.plato--precio button:hover{
-    cursor: pointer;
-}
-
-
-
-/*comida ejecutivos*/
-
-.comida--ejecutivos{
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 85px;
-}
-@media (min-width:768px) {
-    .comida--titulo{
-        text-align: start;
-    }
-}
-
-.plato1{
-    width: 80%;
-    margin-inline:auto;
-    background-color: white;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    text-align: center;
-    border-radius: 10px;
-    border: 1px solid rgba(90, 67, 3, 0.675)
-}
-.plato1 img{
-    width: 400px;
-    filter: drop-shadow(0 0 0.9rem #4a3015 );
-    margin-top: -50px;
-}
-.plato1 p{
-    font-size: 15px;
-    color:#4a3015;
-}
-
-.plato--precio1{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    justify-content: space-between;
-}
-.plato--precio1 p{
-    font-weight: 900;
-}
-.plato--precio1 button{
-    background-color: #4a3015;
-    color: white;
-    font-weight: 900;
-    padding: 5px 12px;
-    border-radius: 50%;
-    font-size: 25px;
-}
-
-.plato--precio1 button:hover{
     cursor: pointer;
 }
 

@@ -1,0 +1,241 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@400;700;900&display=swap');
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+img{
+    width: 100%;
+    object-fit: cover;
+
+}
+/*contrenedor */
+.contendor{
+    background-color: rgb(245, 245, 245);
+    padding-bottom: 40px;
+}
+
+/*header*/
+.header{
+    padding-top: 10px ;
+    width: 90%;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/*logo*/
+.logo{
+    font-weight: 900;
+    font-size: 20px;
+}
+.logo span{
+    color: #4a3015
+}
+
+/*menu tres lineaS*/
+
+.menu {
+    width: 30px;
+    }
+@media (min-width:768px) {
+    .menu{
+        display: none;
+    }
+}
+
+.menu:hover{
+    cursor: pointer;
+}
+
+
+/* navegacion*/
+.menu1{
+    display: none;
+}
+@media (min-width:768px) {
+    .menu1{
+        display: flex;
+    }
+}
+.navegacion{
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+    list-style: none;
+}
+@media (min-width: 768px){
+    .navegacion{
+        gap: 50px
+    }
+}
+.navegacion a{
+    text-decoration: none;
+    color: rgb(97, 90, 92);
+    font-weight: 400;
+    font-size: 15px;     
+}
+.navegacion a:hover{
+    color: black;
+}
+.navegacion li:last-child{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.navegacion li:last-child a{
+    font-weight: 700;
+    }
+.navegacion li:last-child a:last-child{
+    background-color:#5e4225 ;
+    color:white;
+    padding: 5PX;
+    border-radius: 10px;
+    border: 1px solid #5e4225;
+}
+.navegacion li:last-child a:last-child:hover{
+    background-color: white;
+    color: #5e4225;
+}
+
+/*informacion */
+.presentacion{
+    width: 90%;
+    margin-inline: auto;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+@media (min-width: 768px) {
+    .presentacion{
+        flex-direction: row;
+        margin-top: 40px
+    }
+}
+/*informacion */
+.informacion{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+@media (min-width: 768px) {
+    .informacion {
+        text-align: start;
+        align-items: start;
+    }
+} 
+
+formulario-login {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.formulario-login h2 {
+    color: #4a3015;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.campo-formulario {
+    margin-bottom: 20px;
+}
+
+.campo-formulario label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.campo-formulario input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.boton-login {
+    width: 100%;
+    padding: 15px;
+    background-color: #4a3015;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.boton-login:hover {
+    background-color: #5d3d1f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .formulario-login {
+        padding: 20px;
+        margin: 20px;
+    }
+    
+    .presentacion--imagen {
+        display: none;
+    }
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 2rem 1rem;
+    margin-top: 3rem;
+}
+
+.footer-contenido {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-seccion {
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+}
+
+.footer-seccion h3 {
+    color: #ffd700;
+    margin-bottom: 1rem;
+}
+
+.footer-seccion address {
+    font-style: normal;
+}
+
+.footer-seccion a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-seccion a:hover {
+    color: #ffd700;
+}
+
+.footer-copyright {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #666;
+}
