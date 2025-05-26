@@ -1,26 +1,30 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@400;700;900&display=swap');
-*{
+
+* {
     margin: 0;
     border: 0;
     padding: 0;
     font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
 }
-img{
+
+img {
     width: 100%;
     object-fit: cover;
-
 }
-/*contrenedor */
-.contendor{
+
+/* Contenedor principal */
+.contenedor {
     background-color: rgb(245, 245, 245);
     padding-bottom: 40px;
+    min-height: 100vh;
 }
 
-/*header*/
-.header{
-    padding-top: 10px ;
+/* Header */
+.header {
+    padding-top: 10px;
     width: 90%;
     margin-inline: auto;
     display: flex;
@@ -28,82 +32,101 @@ img{
     justify-content: space-between;
 }
 
-/*logo*/
-.logo{
+.logo {
     font-weight: 900;
     font-size: 20px;
 }
-.logo span{
-    color: #4a3015
-}
 
-/*menu tres lineaS*/
+.logo span {
+    color: #4a3015;
+}
 
 .menu {
     width: 30px;
-    }
-@media (min-width:768px) {
-    .menu{
+}
+
+@media (min-width: 768px) {
+    .menu {
         display: none;
     }
 }
 
-.menu:hover{
+.menu:hover {
     cursor: pointer;
 }
 
-
-/* navegacion*/
-.menu1{
+/* Navegación */
+.menu1 {
     display: none;
 }
-@media (min-width:768px) {
-    .menu1{
+
+@media (min-width: 768px) {
+    .menu1 {
         display: flex;
     }
 }
-.navegacion{
+
+.navegacion {
     display: flex;
     align-items: center;
     padding-left: 0;
     list-style: none;
+    gap: 30px;
 }
-@media (min-width: 768px){
-    .navegacion{
-        gap: 50px
-    }
-}
-.navegacion a{
+
+.navegacion a {
     text-decoration: none;
     color: rgb(97, 90, 92);
     font-weight: 400;
-    font-size: 15px;     
+    font-size: 15px;
+    position: relative;
+    transition: color 0.3s ease;
 }
-.navegacion a:hover{
+
+.navegacion a:hover {
     color: black;
 }
-.navegacion li:last-child{
+
+.navegacion a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #5e4225;
+    left: 0;
+    bottom: -3px;
+    transition: width 0.3s ease;
+}
+
+.navegacion a:hover::after {
+    width: 100%;
+}
+
+.navegacion li:last-child {
     display: flex;
     align-items: center;
     gap: 15px;
 }
-.navegacion li:last-child a{
+
+.navegacion li:last-child a {
     font-weight: 700;
-    }
-.navegacion li:last-child a:last-child{
-    background-color:#5e4225 ;
-    color:white;
-    padding: 5PX;
+}
+
+.navegacion li:last-child a:last-child {
+    background-color: #5e4225;
+    color: white;
+    padding: 5px;
     border-radius: 10px;
     border: 1px solid #5e4225;
 }
-.navegacion li:last-child a:last-child:hover{
+
+.navegacion li:last-child a:last-child:hover {
     background-color: white;
     color: #5e4225;
 }
 
-/*informacion */
-.presentacion{
+/* Presentación */
+.presentacion {
     width: 90%;
     margin-inline: auto;
     margin-top: 20px;
@@ -112,27 +135,29 @@ img{
     justify-content: space-evenly;
     align-items: center;
 }
+
 @media (min-width: 768px) {
-    .presentacion{
+    .presentacion {
         flex-direction: row;
-        margin-top: 40px
+        margin-top: 40px;
     }
 }
-/*informacion */
-.informacion{
+
+.informacion {
     text-align: center;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
+
 @media (min-width: 768px) {
     .informacion {
         text-align: start;
         align-items: start;
     }
-} 
+}
 
-/* === TABLA CRUD === */
+/* Tabla CRUD */
 .tabla-crud {
     width: 90%;
     margin: 40px auto 20px auto;
@@ -153,7 +178,7 @@ img{
 .tabla-crud th,
 .tabla-crud td {
     padding: 12px 15px;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #ddd;
 }
 
 .tabla-crud tbody tr:hover {
@@ -161,7 +186,7 @@ img{
     transition: background-color 0.3s ease;
 }
 
-/* === BOTONES DE ACCIONES === */
+/* Botones */
 button.editar,
 button.eliminar {
     padding: 8px 14px;
@@ -169,7 +194,7 @@ button.eliminar {
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 14px;
+    margin: 2px;
 }
 
 button.editar {
@@ -181,8 +206,6 @@ button.editar {
 button.editar:hover {
     background-color: white;
     color: #5e4225;
-    border: 1px solid #5e4225;
-    transform: scale(1.05);
 }
 
 button.eliminar {
@@ -194,12 +217,10 @@ button.eliminar {
 button.eliminar:hover {
     background-color: white;
     color: #a33131;
-    border: 1px solid #a33131;
-    transform: scale(1.05);
 }
 
-/* === BOTONES CRUD GENERALES (Agregar, Editar, Eliminar) === */
-div.botones-crud {
+/* Botones CRUD generales */
+.botones-crud {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -207,7 +228,7 @@ div.botones-crud {
     flex-wrap: wrap;
 }
 
-div.botones-crud button {
+.botones-crud button {
     padding: 10px 20px;
     border-radius: 10px;
     font-weight: bold;
@@ -216,40 +237,12 @@ div.botones-crud button {
     transition: all 0.3s ease;
 }
 
-div.botones-crud button:hover {
+.botones-crud button:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-/* === EFECTO ENLACES NAVEGACIÓN === */
-.navegacion a {
-    position: relative;
-    transition: color 0.3s ease;
-}
-
-.navegacion a::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background-color: #5e4225;
-    left: 0;
-    bottom: -3px;
-    transition: width 0.3s ease;
-}
-
-.navegacion a:hover::after {
-    width: 100%;
-}
-
-
-
-
-
-
-
-
-
+/* Footer */
 footer {
     background-color: #333;
     color: white;
@@ -297,6 +290,7 @@ footer {
     border-top: 1px solid #666;
 }
 
+/* Efectos de enfoque */
 .campo-formulario input:focus,
 .campo-formulario select:focus {
     border-color: #4a3015;

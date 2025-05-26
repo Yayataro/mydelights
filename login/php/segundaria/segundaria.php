@@ -1,4 +1,4 @@
-
+<?php session_start(); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,15 +19,13 @@
             </div>
             <nav class="menu1">
                 <ul class="navegacion">
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Platos a la carta</a></li>
-                    <li><a href="#">Platos Ejecutivos</a></li>
-                    <li><a href="#">Eventos</a></li>
-                    <li><a href="#">Nosotros</a></li>
-                    <li><a href="#">Iniciar Sesión</a><a href="segundaria/">Comprar</a></li>
+                    <li><a href="logout.php">Cerrar sesion</a><a href="segundaria/logout.php">Comprar</a></li>
                 </ul>
+        
             </nav>
+         
         </header>
+        <span>Bienvenido, <?php echo $_SESSION['nombre']?></span>
         <aside class="presentacion">
             <div class="informacion">
                 <h1>TU COMIDA FAVORITA MAS CERCA</h1>

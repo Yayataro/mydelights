@@ -3,12 +3,6 @@
 session_start();
 require 'includes/conexion_be.php';
 
-// Verificar token CSRF (si lo implementaste)
-if (empty($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
-    header("Location: registro.php?error=token");
-    exit;
-}
-
 // Sanitizar y validar datos
 $nombre = filter_input(INPUT_POST, 'nombre', FILTER_SANITIZE_STRING);
 $cedula = filter_input(INPUT_POST, 'cedula', FILTER_SANITIZE_STRING);
@@ -22,9 +16,6 @@ if (!$nombre || !$cedula || !$password || !$tipo_cliente) {
     header("Location: registro.php?error=datos");
     exit;
 }
-
-// Hashear la contraseña
-$passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
 try {
     // Verificar si la cédula ya existe

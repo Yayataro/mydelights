@@ -8,22 +8,22 @@
     <link rel="stylesheet" href="estilo2.css">
 </head>
 <body>
-    <div class="contenedor"> <!-- corregido -->
+    <div class="contenedor"> 
         <header class="header">
             <div class="logo">
-                <p> My <span>Delights</span></p>
+                <p>My <span>Delights</span></p>
             </div>
             <div class="menu">
-                <img src="/my_delights/assets/img/menu.png" alt="menu">
+                <img src="./my_delights/assets/img/menu.png" alt="menu">
             </div>
             <nav class="menu1">
                 <ul class="navegacion">
-                    <li><a href="#">Inicio</a></li>
+                    <li><a href="http://localhost/my_delights/index.html">Inicio</a></li>
                     <li><a href="#">Platos a la carta</a></li>
                     <li><a href="#">Platos Ejecutivos</a></li>
                     <li><a href="#">Eventos</a></li>
                     <li><a href="#">Nosotros</a></li>
-                    <li><a href="#">Iniciar Sesión</a> <a href="#">Registrarse</a></li>
+                    <li><a href="#">Iniciar Sesión</a> <a href="registrar.php">Registrarse</a></li>
                 </ul>
             </nav>
         </header>
@@ -32,7 +32,7 @@
             <div class="informacion">
                 <form class="formulario-login" method="POST" action="validar_be.php">
                     <h2>Iniciar Sesión</h2>
-
+                    
                     <?php if(isset($_GET['error'])): ?>
                         <div class="mensaje-error">Credenciales incorrectas</div>
                     <?php endif; ?>
@@ -58,7 +58,8 @@
                                required>
                     </div>
 
-                    <input type="hidden" name="csrf_token" value="<?php echo generarTokenCSRF(); ?>">
+                    <input type="hidden" name="csrf_token" value="<?php include 'auth.php'; echo generarTokenCSRF(); ?>">
+                    
                     <button type="submit" class="boton-login">Ingresar</button>
 
                     <div class="enlace-registro">
